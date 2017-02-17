@@ -133,8 +133,11 @@ function LoginController (Account) {
     Account
       .login(vm.new_user)
       .then(function(){
-         // TODO #4: clear sign up form
-         // TODO #5: redirect to '/profile'
+        //TODO: #3, #4, #5
+         sc.new_user.displayName = undefined;
+         sc.new_user.email = undefined;
+         sc.new_user.password = undefined;
+         vm.new_user.when('', '/profile');
       })
   };
 }
@@ -202,7 +205,7 @@ function Account($http, $q, $auth) {
         .satellizerLogin(userData) // login (https://github.com/sahat/satellizer#authloginuser-options)
         .then(
           function onSuccess(response) {
-            //TODO #3: set token (https://github.com/sahat/satellizer#authsettokentoken)
+            set token ("https://github.com/sahat/satellizer#authsettokentoken")
           },
 
           function onError(error) {
@@ -213,11 +216,13 @@ function Account($http, $q, $auth) {
   }
 
   function logout() {
-    // returns a promise!!!
-    // TODO #6: logout the user by removing their jwt token (using satellizer)
-    // Make sure to also wipe the user's data from the application:
-    // self.user = null;
-    // returns a promise!!!
+    return (
+        $auth
+          .logout() // delete token https://github.com/sahat/satellizer#authlogout
+          .then(function() {
+            self.user = null;
+          })
+    )
   }
 
   function currentUser() {

@@ -29,6 +29,8 @@ var User = require('./models/user');
  * API Routes
  */
 
+// DEFINING API ROUTES
+
 app.get('/api/me', auth.ensureAuthenticated, function (req, res) {
   User.findById(req.user, function (err, user) {
     res.send(user.populate('posts'));
@@ -66,6 +68,8 @@ app.get('/api/posts', function (req, res) {
 /*
  * Auth Routes
  */
+
+// DEFINING AUTH ROUTES
 
 app.post('/auth/signup', function (req, res) {
   User.findOne({ email: req.body.email }, function (err, existingUser) {

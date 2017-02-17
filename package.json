@@ -1,7 +1,7 @@
 {
   "name": "angular_auth",
   "version": "0.0.0",
-  "description": "",
+  "description": "### Objectives",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -18,5 +18,13 @@
     "jwt-simple": "^0.4.1",
     "moment": "^2.11.1",
     "mongoose": "^4.3.7"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivngiggles/mean-auth-satellizer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shivngiggles/mean-auth-satellizer/issues"
+  },
+  "homepage": "https://github.com/shivngiggles/mean-auth-satellizer#readme"
 }

@@ -5,6 +5,9 @@ module.exports = {
   /*
   * Login Required Middleware
   */
+  // MAKING SURE AUTHENTICATION IS DONE
+  // SENDING ERRORS IF SOMETHING IS WRONG
+  // TOKENS AND PAYLOADS
   ensureAuthenticated: function (req, res, next) {
     if (!req.headers.authorization) {
       return res.status(401).send({ message: 'Please make sure your request has an Authorization header.' });
@@ -29,6 +32,8 @@ module.exports = {
   /*
   * Generate JSON Web Token
   */
+
+  // THE ENTIRE JWT
   createJWT: function (user) {
     var payload = {
       sub: user._id,

@@ -1,7 +1,9 @@
 angular
   .module('AuthSampleApp', [
-    'ui.router'
-    // TODO #2: Add satellizer module
+    'ui.router',
+    'satellizer'
+    // TODO #2: Add satellizer module  Add the Satellizer module to your Angular app in app.js (TODO #2).
+
   ])
   .controller('MainController', MainController)
   .controller('HomeController', HomeController)
